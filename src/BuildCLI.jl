@@ -1,5 +1,9 @@
 module BuildCLI
+include("./utils.jl")
+export runcli
 
-# Write your package code here.
-
+function runcli(f, args=ARGS)
+    ms = collect(methods(f))
+    arguments = method_argnames(last(ms))
+end
 end
